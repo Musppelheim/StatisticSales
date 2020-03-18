@@ -11,7 +11,7 @@ class StatsServiceTest {
     void calcualteSum() {
         StatsService service = new StatsService();
         long expected = 180;
-        long actual = service.calcualteSum(sales);
+        long actual = service.calculateSum(sales);
         assertEquals(expected, actual);
     }
 

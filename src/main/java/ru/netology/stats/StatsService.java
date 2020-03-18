@@ -1,7 +1,7 @@
 package ru.netology.stats;
 
-public class StatsService {
-    public long calcualteSum(long[] sales) {
+public class StatsService<sum> {
+    public long calculateSum(long[] sales) {
         long sum = 0;
         for (long sale : sales) {
             sum += sale;
@@ -10,15 +10,11 @@ public class StatsService {
     }
 
     public long averageSale(long[] sales) {
-        long sum = 0;
-        long months = 0;
-        long averageSale = 0;
-        for (long sale : sales) {
-            months += 1;
-            sum += sale;
+        long sum = calculateSum(sales);
+        long averageSale = sum / sales.length;
+        return averageSale; // Среднюю сумму продаж в месяц
         }
-        return averageSale = sum / months; // Среднюю сумму продаж в месяц
-    }
+
 
     public long bestSalesMonth(long[] sales) {
         long currentMax = sales[0];
@@ -49,12 +45,6 @@ public class StatsService {
     }
 
     public long monthsSalesUnderAverage(long[] sales) {
-        long sum = 0;
-        long months = 0;
-        for (long sale : sales) {
-            months += 1;
-            sum += sale;
-        }
         long averageSale = averageSale(sales);
         long currentMonthSales;
         long monthsNumber = 0;
@@ -68,12 +58,6 @@ public class StatsService {
     }
 
     public long monthsSalesOverAverage(long[] sales) {
-        long sum = 0;
-        long months = 0;
-        for (long sale : sales) {
-            months += 1;
-            sum += sale;
-        }
         long averageSale = averageSale(sales);
         long currentMonthSales;
         long monthsNumber = 0;
